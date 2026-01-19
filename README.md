@@ -32,15 +32,20 @@ This architecture intentionally supports both keypad-based and voice-based calle
 1️⃣ Entry Point & Logging
 
 Call enters Amazon Connect contact flow
+
 Flow logging enabled immediately for traceability
+
 Ensures all execution steps are visible in CloudWatch Logs
 
 
 2️⃣ Welcome Prompt + Menu Design
 
 Customer hears a structured welcome message
+
 Options available via:
+
 DTMF (keypad)
+
 Voice (Amazon Lex)
 
 This design avoids hard dependency on voice only (common real-world requirement).
@@ -51,14 +56,16 @@ This design avoids hard dependency on voice only (common real-world requirement)
 Key presses route directly to queues:
 
 1 → Auto Insurance
+
 2 → Home Insurance
+
 3 → Claims (Lex-enabled path)
+
 4 → Technical Support
 
 Handles:
-No input
-Invalid input
-Timeouts
+
+No input | Invalid input |Timeouts
 
 This ensures callers never get stuck.
 
@@ -68,9 +75,12 @@ This ensures callers never get stuck.
 Lex is used only where voice adds value (Claims & Policy queries).
 
 Lex V2 bot trained with intents:
+
 - CheckClaimStatus
 - PolicyInformation
+
 Lex collects intent → passes context to Lambda
+
 Contact flow evaluates $.Lex.IntentName
 
 
@@ -79,27 +89,31 @@ Contact flow evaluates $.Lex.IntentName
 Lambda is where decision-making happens, not in the IVR.
 
 Written in Python
+
 Receives intent from Lex
+
 Performs logic based on intent type
+
 Returns structured responses back to Amazon Connect
+
 This separation keeps:
 
-Contact flows readable
-Business logic version-controlled
+Contact flows readable | Business logic version-controlled
 
 
 6️⃣ Queue Routing & Agent Experience
 
-Calls are routed to insurance-specific queues
-Routing profiles ensure correct agent selection
-Agent Workspace shows real-time call context
+Calls are routed to insurance-specific queues | Routing profiles ensure correct agent selection | Agent Workspace shows real-time call context
 
 
 7️⃣ Queue Capacity & Callback Handling
 
 If a queue is full:
+
 Customer is offered a callback
+
 Callback number is captured dynamically
+
 Prevents excessive wait times
 
 
@@ -107,25 +121,22 @@ Prevents excessive wait times
 CloudWatch Logs
 
 Contact flow execution logs
+
 Lamada invocation logs
+
 Enables post-incident analysis
 
 
 CloudWatch Metrics & Dashboards
 
-Queue depth
-Agent availability
-Call performance
-Real-time operational visibility
+Queue depth | Agent availability | Call performance |Real-time operational visibility
 
 
 🔐 IAM & Security
 
 Separate IAM roles for:
-Amazon Connect
-Lex
-Lambda
-Permissions scoped to least privilege
+
+Amazon Connect | Lex | Lambda |Permissions scoped to least privilege
 
 
 ### Main Contact Flow
