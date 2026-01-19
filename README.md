@@ -253,7 +253,7 @@ The current implementation is intentionally minimal.  To extend it:
 
 ### Contributions are welcome!  Feel free to fork the repository and submit pull requests for enhancements.
 
-🚀 Why This Matters
+🚀 Why This Matters: 
 
 This project is not a demo flow — it reflects how real insurance contact centers are designed, monitored, and supported using Amazon Connect.
 
