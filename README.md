@@ -149,7 +149,6 @@ are returned back to the contact flow.
 ![Lambda Overview](docs/lambda_overview.png)
 
 Lambda (Python) – Handler + Execution
-![Lambda Overview](docs/lambda_overview.png)
 ![Lambda Execution](docs/lambda_exe.png)
 
 CloudWatch Monitoring (Metrics + Dashboard)
