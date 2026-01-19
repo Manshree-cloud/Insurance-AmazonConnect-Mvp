@@ -133,14 +133,31 @@ and callback logic.
 
 ![Main Contact Flow](docs/mvp_main_contact_flow.png)
 
-### Lambda (Python) + Amazon Lex Integration
+ Customer Queue / Wait Experience
+![Customer Queue](docs/mvp_customerqueue.png)
 
+Lex Bot + Intent Configuration
+![Lex Bot](docs/lex_bot.png)
+![Lex Intent](docs/lex_intent.png)
+
+
+Lambda (Python) 
 Business logic is implemented in Python using AWS Lambda.  
 Lex intents are passed to Lambda for processing and dynamic responses
 are returned back to the contact flow.
 
 ![Lambda Overview](docs/lambda_overview.png)
-![Lex Bot](docs/lex_bot.png)
+
+Lambda (Python) – Handler + Execution
+![Lambda Overview](docs/lambda_overview.png)
+![Lambda Execution](docs/lambda_exe.png)
+
+CloudWatch Monitoring (Metrics + Dashboard)
+![CloudWatch Summary](docs/cw_summary.png)
+![Performance Dashboard](docs/performance_dashboard.png)
+
+S3 Call Recording Bucket (Artifacts)
+![S3 Recording Bucket](docs/s3_connect_recordingbucket.png)
 
 📂 Repository Structure
 Insurance-AmazonConnect-Mvp/
