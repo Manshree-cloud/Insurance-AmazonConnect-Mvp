@@ -1,3 +1,182 @@
+# 📞 Insurance Contact Center – Amazon Connect MVP
+
+Production-style **Amazon Connect contact center MVP** built for an insurance use case, demonstrating **end-to-end IVR design, Lex integration, Lambda automation, monitoring, and operational visibility**.
+
+This project reflects **hands-on experience designing, configuring, and operating Amazon Connect workloads** with a focus on real-world support and production readiness.
+
+---
+
+## 🏗 Architecture Overview
+
+**Inbound Voice Flow**
+Customer Call
+↓
+Amazon Connect IVR
+↓
+DTMF / Amazon Lex (NLU)
+↓
+Lambda (Python)
+↓
+Queue / Agent
+↓
+Call Recording + Metrics
+
+yaml
+Copy code
+
+---
+
+## 🔧 Services Used
+
+- **Amazon Connect** – IVR, queues, routing profiles, agent workspace
+- **Amazon Lex V2** – Intent recognition for insurance use cases
+- **AWS Lambda (Python)** – Business logic & intent handling
+- **Amazon CloudWatch**
+  - Logs (Contact Flow + Lambda)
+  - Metrics (Queue depth, agent availability)
+  - Dashboards
+- **Amazon S3** – Call recordings & artifacts
+- **AWS IAM** – Least-privilege roles for Connect, Lex, Lambda
+
+---
+
+## 📂 Repository Structure
+
+```text
+Insurance-AmazonConnect-Mvp/
+│
+├── contact-flows/
+│   └── mvp_main_contactflow.json   # Exported Amazon Connect contact flow
+│
+├── lambda/
+│   └── lex_handler.py              # Lex → Lambda intent handler
+│
+├── docs/
+│   ├── mvp_main_contact_flow.png
+│   ├── lex_bot.png
+│   ├── lambda_overview.png
+│   ├── cw_summary.png
+│   ├── performance_dashboard.png
+│   └── ...                         # Supporting screenshots
+│
+└── README.md
+☎️ IVR Features
+Welcome prompt with insurance menu options
+
+DTMF fallback for keypad input
+
+Amazon Lex voice intent handling
+
+Policy Information
+
+Claim Status
+
+Queue routing by intent
+
+Queue-at-capacity callback logic
+
+Graceful error & no-input handling
+
+🤖 Amazon Lex + Lambda
+Lex V2 bot configured with insurance intents
+
+Lambda processes intent context
+
+Dynamic response messages returned to IVR
+
+Designed for easy extension (policy lookup, claim APIs)
+
+📊 Monitoring & Observability
+CloudWatch Logs
+
+Contact flow execution logs
+
+Lambda invocation logs
+
+Metrics
+
+Queue depth
+
+Agent availability
+
+Call handling
+
+Dashboards
+
+Real-time & historical performance view
+
+Screenshots available in /docs.
+
+🔐 Security & IAM
+Dedicated IAM roles for:
+
+Amazon Connect
+
+Lex
+
+Lambda
+
+Scoped permissions following least-privilege principles
+
+No credentials stored in repo
+
+📌 Notes
+This is an MVP designed to reflect production patterns
+
+Screenshots represent a previously active environment
+
+Architecture and flow design follow AWS best practices
+
+🚀 Next Enhancements
+API Gateway + backend insurance APIs
+
+Contact Lens analytics
+
+DynamoDB policy data store
+
+CI/CD for contact flow & Lambda updates
+
+👤 Author: Manshree Patel
+🎯 Focus: Amazon Connect | Cloud Support | L2/L3 Operations | AWS Serverless
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # MVP Insurance Contact Center
 
 This repository contains an MVP (minimum viable product) insurance contact‑centre built on top of **Amazon Connect**.  It demonstrates how a small team can assemble a feature‑rich IVR using cloud‑native services like Connect, Lex and Lambda.  The goal is to showcase the type of solution that someone with **six months to one year of AWS and contact centre experience** could build and operate.
