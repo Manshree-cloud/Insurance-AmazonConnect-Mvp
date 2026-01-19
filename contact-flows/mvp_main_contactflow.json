@@ -1,0 +1,733 @@
+{
+  "Version": "2019-10-30",
+  "StartAction": "0d9cc40b-efe6-476e-af94-885c526a9032",
+  "Metadata": {
+    "entryPointPosition": {
+      "x": 40,
+      "y": 40
+    },
+    "ActionMetadata": {
+      "Queue_At_Capacity_Prompt": {
+        "position": {
+          "x": 1400,
+          "y": -260
+        },
+        "isFriendlyName": true
+      },
+      "Set_Callback_Number": {
+        "position": {
+          "x": 1960,
+          "y": 260
+        },
+        "isFriendlyName": true
+      },
+      "Offer_Callback": {
+        "position": {
+          "x": 2217.6,
+          "y": 283.2
+        },
+        "isFriendlyName": true,
+        "parameters": {
+          "QueueId": {
+            "useDynamic": true
+          }
+        }
+      },
+      "4b66acd3-1207-4f86-a939-ad5093dd5d63": {
+        "position": {
+          "x": 840,
+          "y": -260
+        },
+        "parameters": {
+          "QueueId": {
+            "displayName": "ABINS-CLAIMS"
+          }
+        },
+        "queue": {
+          "text": "ABINS-CLAIMS"
+        }
+      },
+      "9aca53b9-b805-41cf-beec-25553edf05aa": {
+        "position": {
+          "x": 1038.4,
+          "y": 736.8
+        }
+      },
+      "0d9cc40b-efe6-476e-af94-885c526a9032": {
+        "position": {
+          "x": 94.4,
+          "y": -131.2
+        }
+      },
+      "NoInput prompt": {
+        "position": {
+          "x": 560,
+          "y": 520
+        },
+        "isFriendlyName": true
+      },
+      "3279ab65-de57-46a3-975d-cdfa6c2cffdd": {
+        "position": {
+          "x": 840,
+          "y": 0
+        },
+        "parameters": {
+          "QueueId": {
+            "displayName": "ABINS-AUTO"
+          }
+        },
+        "queue": {
+          "text": "ABINS-AUTO"
+        }
+      },
+      "Mvp-HOME": {
+        "position": {
+          "x": 840,
+          "y": 260
+        },
+        "isFriendlyName": true,
+        "parameters": {
+          "QueueId": {
+            "displayName": "ABINS-HOME"
+          }
+        },
+        "queue": {
+          "text": "ABINS-HOME"
+        }
+      },
+      "ff30b3b8-9919-405c-b1de-11b01cf3e978": {
+        "position": {
+          "x": 840,
+          "y": 520
+        },
+        "parameters": {
+          "QueueId": {
+            "displayName": "ABINS-TECH"
+          }
+        },
+        "queue": {
+          "text": "ABINS-TECH"
+        }
+      },
+      "887cceb5-6e4b-4fd7-a75a-0333aba57efc": {
+        "position": {
+          "x": 280,
+          "y": 780
+        }
+      },
+      "welcome greeting": {
+        "position": {
+          "x": 308,
+          "y": 0.8
+        },
+        "isFriendlyName": true
+      },
+      "0a030abd-90c0-49b3-ad18-2e9793ef30c3": {
+        "position": {
+          "x": 1120,
+          "y": 0
+        }
+      },
+      "ddaf3de6-ba58-450f-8676-f60669389c88": {
+        "position": {
+          "x": 2061.6,
+          "y": 509.6
+        }
+      },
+      "3a74a575-c75f-46bd-83e1-279060abbaba": {
+        "position": {
+          "x": 1110.4,
+          "y": 492.8
+        }
+      },
+      "DTMF_Fallback": {
+        "position": {
+          "x": 560,
+          "y": 0
+        },
+        "isFriendlyName": true,
+        "conditionMetadata": [
+          {
+            "id": "4e5e28d7-16a0-4964-8767-a57ff6c66fe3",
+            "value": "1"
+          },
+          {
+            "id": "941c519c-420e-4ab6-b22e-f06665309f66",
+            "value": "2"
+          },
+          {
+            "id": "44276a56-3b3b-49dd-9f54-b49d35f7b3b6",
+            "value": "3"
+          },
+          {
+            "id": "655c6a82-14a5-4f97-8143-fb334454a675",
+            "value": "4"
+          }
+        ]
+      },
+      "Lambda response": {
+        "position": {
+          "x": 1680,
+          "y": 520
+        },
+        "isFriendlyName": true,
+        "parameters": {
+          "PromptId": {
+            "useDynamic": true
+          }
+        },
+        "useDynamic": true
+      },
+      "Route_By_Lex_Intent": {
+        "position": {
+          "x": 1636.8,
+          "y": -16
+        },
+        "isFriendlyName": true,
+        "conditions": [],
+        "conditionMetadata": [
+          {
+            "id": "b2ae01a2-91f0-442d-9fa6-7456754ce639",
+            "operator": {
+              "name": "Equals",
+              "value": "Equals",
+              "shortDisplay": "="
+            },
+            "value": "CheckClaimStatus"
+          },
+          {
+            "id": "9de8371b-a9f3-4dda-aaf5-dc53cc97dead",
+            "operator": {
+              "name": "Equals",
+              "value": "Equals",
+              "shortDisplay": "="
+            },
+            "value": "policyinformation"
+          }
+        ]
+      },
+      "6e5f88f7-c5c9-4dda-bd4a-7a6383236b69": {
+        "position": {
+          "x": 1112.8,
+          "y": 207.2
+        },
+        "parameters": {
+          "LexV2Bot": {
+            "AliasArn": {
+              "displayName": "Prod",
+              "useLexBotDropdown": true,
+              "lexV2BotName": "MvpInsurance-LexBot"
+            }
+          }
+        },
+        "useLexBotDropdown": true,
+        "lexV2BotName": "MvpInsurance-LexBot",
+        "lexV2BotAliasName": "Prod",
+        "conditionMetadata": [
+          {
+            "id": "7b1700e5-fec4-4456-ae57-6a2cb790366e",
+            "operator": {
+              "name": "Equals",
+              "value": "Equals",
+              "shortDisplay": "="
+            },
+            "value": "policyinformation"
+          },
+          {
+            "id": "858703e5-88ba-42d2-ac1d-c8b5602e859b",
+            "operator": {
+              "name": "Equals",
+              "value": "Equals",
+              "shortDisplay": "="
+            },
+            "value": "CheckClaimStatus"
+          }
+        ]
+      },
+      "Lex_NoMatch_Retry_Prompt": {
+        "position": {
+          "x": 1399.2,
+          "y": 518.4
+        },
+        "isFriendlyName": true
+      },
+      "Invoke_Lex_Handler": {
+        "position": {
+          "x": 2074.4,
+          "y": 12
+        },
+        "isFriendlyName": true,
+        "parameters": {
+          "LambdaFunctionARN": {
+            "displayName": "ABINS-LexHandler"
+          },
+          "LambdaInvocationAttributes": {
+            "action": {
+              "useDynamic": true
+            }
+          }
+        },
+        "dynamicMetadata": {
+          "action": true
+        }
+      },
+      "SaveLexIntent": {
+        "position": {
+          "x": 1665.6,
+          "y": 299.2
+        },
+        "isFriendlyName": true,
+        "parameters": {
+          "Attributes": {
+            "action": {
+              "useDynamic": true
+            }
+          }
+        },
+        "dynamicParams": [
+          "action"
+        ]
+      }
+    },
+    "Annotations": [],
+    "name": "Mvp_Main_IVR contact flow",
+    "description": "",
+    "type": "contactFlow",
+    "status": "PUBLISHED",
+    "hash": {}
+  },
+  "Actions": [
+    {
+      "Parameters": {
+        "Text": "All of our agents are currently busy. We can call you back shortly.\n"
+      },
+      "Identifier": "Queue_At_Capacity_Prompt",
+      "Type": "MessageParticipant",
+      "Transitions": {
+        "NextAction": "Set_Callback_Number",
+        "Errors": [
+          {
+            "NextAction": "ddaf3de6-ba58-450f-8676-f60669389c88",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "CallbackNumber": "$.CustomerEndpoint.Address"
+      },
+      "Identifier": "Set_Callback_Number",
+      "Type": "UpdateContactCallbackNumber",
+      "Transitions": {
+        "NextAction": "Offer_Callback",
+        "Errors": [
+          {
+            "NextAction": "ddaf3de6-ba58-450f-8676-f60669389c88",
+            "ErrorType": "InvalidCallbackNumber"
+          },
+          {
+            "NextAction": "ddaf3de6-ba58-450f-8676-f60669389c88",
+            "ErrorType": "CallbackNumberNotDialable"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "RetryDelaySeconds": "600",
+        "InitialCallDelaySeconds": "99",
+        "MaximumConnectionAttempts": "1",
+        "QueueId": "",
+        "CallbackMode": "AgentFirst"
+      },
+      "Identifier": "Offer_Callback",
+      "Type": "CreateCallbackContact",
+      "Transitions": {
+        "NextAction": "ddaf3de6-ba58-450f-8676-f60669389c88",
+        "Errors": [
+          {
+            "NextAction": "ddaf3de6-ba58-450f-8676-f60669389c88",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "QueueId": "arn:aws:connect:ca-central-1:446406251448:instance/400a38eb-73d9-473a-a147-e2e39f06b27a/queue/d72a9b2c-c03b-4f12-9ef2-06173b31769c"
+      },
+      "Identifier": "4b66acd3-1207-4f86-a939-ad5093dd5d63",
+      "Type": "UpdateContactTargetQueue",
+      "Transitions": {
+        "NextAction": "0a030abd-90c0-49b3-ad18-2e9793ef30c3",
+        "Errors": [
+          {
+            "NextAction": "9aca53b9-b805-41cf-beec-25553edf05aa",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {},
+      "Identifier": "9aca53b9-b805-41cf-beec-25553edf05aa",
+      "Type": "DisconnectParticipant",
+      "Transitions": {}
+    },
+    {
+      "Parameters": {
+        "FlowLoggingBehavior": "Enabled"
+      },
+      "Identifier": "0d9cc40b-efe6-476e-af94-885c526a9032",
+      "Type": "UpdateFlowLoggingBehavior",
+      "Transitions": {
+        "NextAction": "welcome greeting"
+      }
+    },
+    {
+      "Parameters": {
+        "Text": "Sorry, I didn’t get any input. Please press 1 for Auto, 2 for Home, 3 for Claims, or 4 for Technical Support"
+      },
+      "Identifier": "NoInput prompt",
+      "Type": "MessageParticipant",
+      "Transitions": {
+        "NextAction": "DTMF_Fallback",
+        "Errors": [
+          {
+            "NextAction": "887cceb5-6e4b-4fd7-a75a-0333aba57efc",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "QueueId": "arn:aws:connect:ca-central-1:446406251448:instance/400a38eb-73d9-473a-a147-e2e39f06b27a/queue/da690e2f-ad79-4c7d-be08-f575f006b727"
+      },
+      "Identifier": "3279ab65-de57-46a3-975d-cdfa6c2cffdd",
+      "Type": "UpdateContactTargetQueue",
+      "Transitions": {
+        "NextAction": "0a030abd-90c0-49b3-ad18-2e9793ef30c3",
+        "Errors": [
+          {
+            "NextAction": "9aca53b9-b805-41cf-beec-25553edf05aa",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "QueueId": "arn:aws:connect:ca-central-1:446406251448:instance/400a38eb-73d9-473a-a147-e2e39f06b27a/queue/2d5576be-e2f7-4a5e-ac73-69f3da53ead9"
+      },
+      "Identifier": "Mvp-HOME",
+      "Type": "UpdateContactTargetQueue",
+      "Transitions": {
+        "NextAction": "0a030abd-90c0-49b3-ad18-2e9793ef30c3",
+        "Errors": [
+          {
+            "NextAction": "9aca53b9-b805-41cf-beec-25553edf05aa",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "QueueId": "arn:aws:connect:ca-central-1:446406251448:instance/400a38eb-73d9-473a-a147-e2e39f06b27a/queue/6d1468ed-2ffc-4d2c-a332-0c196045927e"
+      },
+      "Identifier": "ff30b3b8-9919-405c-b1de-11b01cf3e978",
+      "Type": "UpdateContactTargetQueue",
+      "Transitions": {
+        "NextAction": "0a030abd-90c0-49b3-ad18-2e9793ef30c3",
+        "Errors": [
+          {
+            "NextAction": "9aca53b9-b805-41cf-beec-25553edf05aa",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {},
+      "Identifier": "887cceb5-6e4b-4fd7-a75a-0333aba57efc",
+      "Type": "DisconnectParticipant",
+      "Transitions": {}
+    },
+    {
+      "Parameters": {
+        "Text": "Welcome to MvpInsurance.\nFor Auto Insurance, press 1 or say Auto.\nFor Home Insurance, press 2 or say Home.\nFor Claims, press 3 or say Claims.\nFor Technical Support, press 4.\nYou can also speak your request at any time."
+      },
+      "Identifier": "welcome greeting",
+      "Type": "MessageParticipant",
+      "Transitions": {
+        "NextAction": "DTMF_Fallback",
+        "Errors": [
+          {
+            "NextAction": "887cceb5-6e4b-4fd7-a75a-0333aba57efc",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {},
+      "Identifier": "0a030abd-90c0-49b3-ad18-2e9793ef30c3",
+      "Type": "TransferContactToQueue",
+      "Transitions": {
+        "NextAction": "9aca53b9-b805-41cf-beec-25553edf05aa",
+        "Errors": [
+          {
+            "NextAction": "Queue_At_Capacity_Prompt",
+            "ErrorType": "QueueAtCapacity"
+          },
+          {
+            "NextAction": "9aca53b9-b805-41cf-beec-25553edf05aa",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {},
+      "Identifier": "ddaf3de6-ba58-450f-8676-f60669389c88",
+      "Type": "EndFlowExecution",
+      "Transitions": {}
+    },
+    {
+      "Parameters": {
+        "Text": "orry, I’m having trouble. Please use the keypad."
+      },
+      "Identifier": "3a74a575-c75f-46bd-83e1-279060abbaba",
+      "Type": "MessageParticipant",
+      "Transitions": {
+        "NextAction": "DTMF_Fallback",
+        "Errors": [
+          {
+            "NextAction": "0a030abd-90c0-49b3-ad18-2e9793ef30c3",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "StoreInput": "False",
+        "InputTimeLimitSeconds": "5",
+        "Text": "You may press a number now."
+      },
+      "Identifier": "DTMF_Fallback",
+      "Type": "GetParticipantInput",
+      "Transitions": {
+        "NextAction": "NoInput prompt",
+        "Conditions": [
+          {
+            "NextAction": "3279ab65-de57-46a3-975d-cdfa6c2cffdd",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "1"
+              ]
+            }
+          },
+          {
+            "NextAction": "Mvp-HOME",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "2"
+              ]
+            }
+          },
+          {
+            "NextAction": "6e5f88f7-c5c9-4dda-bd4a-7a6383236b69",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "3"
+              ]
+            }
+          },
+          {
+            "NextAction": "ff30b3b8-9919-405c-b1de-11b01cf3e978",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "4"
+              ]
+            }
+          }
+        ],
+        "Errors": [
+          {
+            "NextAction": "NoInput prompt",
+            "ErrorType": "InputTimeLimitExceeded"
+          },
+          {
+            "NextAction": "NoInput prompt",
+            "ErrorType": "NoMatchingCondition"
+          },
+          {
+            "NextAction": "887cceb5-6e4b-4fd7-a75a-0333aba57efc",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "PromptId": "$.External.message"
+      },
+      "Identifier": "Lambda response",
+      "Type": "MessageParticipant",
+      "Transitions": {
+        "NextAction": "ddaf3de6-ba58-450f-8676-f60669389c88",
+        "Errors": [
+          {
+            "NextAction": "DTMF_Fallback",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "ComparisonValue": "$.Lex.IntentName"
+      },
+      "Identifier": "Route_By_Lex_Intent",
+      "Type": "Compare",
+      "Transitions": {
+        "NextAction": "Invoke_Lex_Handler",
+        "Conditions": [
+          {
+            "NextAction": "Invoke_Lex_Handler",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "CheckClaimStatus"
+              ]
+            }
+          },
+          {
+            "NextAction": "Invoke_Lex_Handler",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "policyinformation"
+              ]
+            }
+          }
+        ],
+        "Errors": [
+          {
+            "NextAction": "Invoke_Lex_Handler",
+            "ErrorType": "NoMatchingCondition"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "Text": "For claim status, say ‘claim status’. For policy questions, say ‘policy information’",
+        "LexV2Bot": {
+          "AliasArn": "arn:aws:lex:ca-central-1:446406251448:bot-alias/8WFCQLLQPG/UDZAKLBC5Q"
+        }
+      },
+      "Identifier": "6e5f88f7-c5c9-4dda-bd4a-7a6383236b69",
+      "Type": "ConnectParticipantWithLexBot",
+      "Transitions": {
+        "NextAction": "3a74a575-c75f-46bd-83e1-279060abbaba",
+        "Conditions": [
+          {
+            "NextAction": "Route_By_Lex_Intent",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "policyinformation"
+              ]
+            }
+          },
+          {
+            "NextAction": "Route_By_Lex_Intent",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "CheckClaimStatus"
+              ]
+            }
+          }
+        ],
+        "Errors": [
+          {
+            "NextAction": "SaveLexIntent",
+            "ErrorType": "NoMatchingCondition"
+          },
+          {
+            "NextAction": "3a74a575-c75f-46bd-83e1-279060abbaba",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "Text": "Sorry, I didn’t quite catch that. You can say Claims, Policy Information, or press 4 for Technical Support.\n"
+      },
+      "Identifier": "Lex_NoMatch_Retry_Prompt",
+      "Type": "MessageParticipant",
+      "Transitions": {
+        "NextAction": "6e5f88f7-c5c9-4dda-bd4a-7a6383236b69",
+        "Errors": [
+          {
+            "NextAction": "DTMF_Fallback",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "LambdaFunctionARN": "arn:aws:lambda:ca-central-1:446406251448:function:ABINS-LexHandler",
+        "InvocationTimeLimitSeconds": "3",
+        "InvocationType": "SYNCHRONOUS",
+        "LambdaInvocationAttributes": {
+          "action": "$.Attributes.action"
+        },
+        "ResponseValidation": {
+          "ResponseType": "STRING_MAP"
+        }
+      },
+      "Identifier": "Invoke_Lex_Handler",
+      "Type": "InvokeLambdaFunction",
+      "Transitions": {
+        "NextAction": "Lambda response",
+        "Errors": [
+          {
+            "NextAction": "Lex_NoMatch_Retry_Prompt",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "Attributes": {
+          "action": "$.Lex.IntentName"
+        },
+        "TargetContact": "Current"
+      },
+      "Identifier": "SaveLexIntent",
+      "Type": "UpdateContactAttributes",
+      "Transitions": {
+        "NextAction": "Invoke_Lex_Handler",
+        "Errors": [
+          {
+            "NextAction": "Lex_NoMatch_Retry_Prompt",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    }
+  ]
+}
