@@ -29,27 +29,18 @@ This flow intentionally supports both keypad users and voice users, which is cri
 1️⃣ Entry Point & Logging
 
 Call enters Amazon Connect contact flow
-
 Flow logging enabled immediately for traceability
-
 Ensures all execution steps are visible in CloudWatch Logs
-
-📸 Proof
 
 
 2️⃣ Welcome Prompt + Menu Design
 
 Customer hears a structured welcome message
-
 Options available via:
-
 DTMF (keypad)
-
 Voice (Amazon Lex)
 
 This design avoids hard dependency on voice only (common real-world requirement).
-
-📸 Proof
 
 
 3️⃣ DTMF Routing (Fallback-Safe Design)
@@ -57,24 +48,16 @@ This design avoids hard dependency on voice only (common real-world requirement)
 Key presses route directly to queues:
 
 1 → Auto Insurance
-
 2 → Home Insurance
-
 3 → Claims (Lex-enabled path)
-
 4 → Technical Support
 
 Handles:
-
 No input
-
 Invalid input
-
 Timeouts
 
 This ensures callers never get stuck.
-
-📸 Proof
 
 
 4️⃣ Amazon Lex (Voice Intent Handling)
@@ -82,18 +65,10 @@ This ensures callers never get stuck.
 Lex is used only where voice adds value (Claims & Policy queries).
 
 Lex V2 bot trained with intents:
-
 CheckClaimStatus
-
 PolicyInformation
-
 Lex collects intent → passes context to Lambda
-
 Contact flow evaluates $.Lex.IntentName
-
-📸 Proof
-
-
 
 
 5️⃣ Python Lambda (Business Logic)
@@ -101,93 +76,71 @@ Contact flow evaluates $.Lex.IntentName
 Lambda is where decision-making happens, not in the IVR.
 
 Written in Python
-
 Receives intent from Lex
-
 Performs logic based on intent type
-
 Returns structured responses back to Amazon Connect
-
 This separation keeps:
 
 Contact flows readable
-
 Business logic version-controlled
-
-📸 Proof
-
-
 
 
 6️⃣ Queue Routing & Agent Experience
 
 Calls are routed to insurance-specific queues
-
 Routing profiles ensure correct agent selection
-
 Agent Workspace shows real-time call context
-
-📸 Proof
-
-
 
 
 7️⃣ Queue Capacity & Callback Handling
 
 If a queue is full:
-
 Customer is offered a callback
-
 Callback number is captured dynamically
-
 Prevents excessive wait times
-
-📸 Proof
 
 
 📊 Monitoring, Logs & Operations (Very Important)
 CloudWatch Logs
 
 Contact flow execution logs
-
-Lambda invocation logs
-
+Lamada invocation logs
 Enables post-incident analysis
-
-📸 Proof
 
 
 CloudWatch Metrics & Dashboards
 
 Queue depth
-
 Agent availability
-
 Call performance
-
 Real-time operational visibility
-
-📸 Proof
-
-
 
 
 🔐 IAM & Security
 
 Separate IAM roles for:
-
 Amazon Connect
-
 Lex
-
 Lambda
-
 Permissions scoped to least privilege
 
-No credentials stored in repo
 
-📸 Proof
+### Main Contact Flow
 
+The core IVR logic is implemented using an Amazon Connect contact flow,
+supporting DTMF input, Lex-based voice intent routing, error handling,
+and callback logic.
+
+![Main Contact Flow](docs/mvp_main_contact_flow.png)
+
+### Lambda (Python) + Amazon Lex Integration
+
+Business logic is implemented in Python using AWS Lambda.  
+Lex intents are passed to Lambda for processing and dynamic responses
+are returned back to the contact flow.
+
+![Lambda Overview](docs/lambda_overview.png)
+![Lex Bot](docs/lex_bot.png)
 
 📂 Repository Structure
 Insurance-AmazonConnect-Mvp/
@@ -202,8 +155,6 @@ Insurance-AmazonConnect-Mvp/
 │
 └── README.md
 
-
-All additional screenshots and detailed proofs are available in the /docs folder.
 
 🎯 Key Skills Demonstrated
 
@@ -220,6 +171,48 @@ CloudWatch monitoring & troubleshooting
 Production-style error handling
 
 Contact center operational thinking
+
+
+## 📸 Screenshots
+
+The `docs/` folder contains supporting screenshots that demonstrate the design,
+configuration, and operational behavior of the Amazon Connect contact center.
+
+| File | Description |
+|-----|------------|
+| `agent_profile.png` | Example of an agent profile view in Amazon Connect. |
+| `agent_workspace.png` | Connect agent workspace showing call details and controls. |
+| `amazon_lex.png` | Amazon Lex V2 configuration screen showing intents and slots. |
+| `callback_flow.png` | Contact flow logic for handling callback offers. |
+| `cloudwatch1.png` | Sample CloudWatch dashboard showing call metrics. |
+| `connect.png` | Entry point to the Amazon Connect instance. |
+| `contactsearch.png` | Searching contacts within the Amazon Connect console. |
+| `cw_api.png` | CloudWatch metrics view for API usage. |
+| `cw_g.png` | Generic CloudWatch metrics for Connect. |
+| `cw_metric.png` | CloudWatch metric chart illustrating call performance. |
+| `cw_metric2.png` | Additional CloudWatch metric for deeper analysis. |
+| `cw_metric3.png` | Extended CloudWatch performance metric. |
+| `cw_summary.png` | Consolidated CloudWatch dashboard summary. |
+| `iam_lex.png` | IAM policy configuration granting Lex permissions. |
+| `iam_lextest.png` | Testing IAM permissions for Lex bot integration. |
+| `iam_role.png` | IAM role associated with Connect / Lambda. |
+| `lambda_overview.png` | Overview of the Lambda function configuration. |
+| `lambda_exe.png` | Lambda execution and runtime configuration. |
+| `lex_bot.png` | Summary view of the Lex bot and configured intents. |
+| `lex_intent.png` | Detailed configuration of a Lex intent. |
+| `live_call.png` | Example of a live call in progress in Amazon Connect. |
+| `logstream.png` | CloudWatch log stream showing execution logs. |
+| `logstream1.png` | Additional CloudWatch log stream view. |
+| `metric1.png` | Supplemental CloudWatch metric chart. |
+| `mvp_customerqueue.png` | Customer queue configuration for the MVP. |
+| `mvp_main_contact_flow.png` | Main Amazon Connect contact flow used in this project. |
+| `performance_dashboard.png` | Performance dashboard showing key call-center KPIs. |
+| `prod_lex.png` | Production alias configuration for the Lex bot. |
+| `real_time_agent_metrics.png` | Real-time agent metrics dashboard in Amazon Connect. |
+| `routing_profile.png` | Routing profile mapping agents to queues. |
+| `s3_connect.png` | S3 bucket used for Connect artifacts and recordings. |
+| `s3_connect_recordingbucket.png` | S3 recording bucket configuration for call recordings. |
+
 
 🚀 Why This Matters
 
@@ -269,41 +262,7 @@ This project is not a demo flow — it reflects how real insurance contact cente
 
 
 
-## Screenshots
 
-The `docs/` folder contains a number of screenshots to aid in understanding the solution:
-
-| File | Description |
-|-----|-------------|
-| `agent_profile.png` | Example of an agent profile view in Amazon Connect. |
-| `agent_workspace.png` | The Connect agent workspace showing call details and controls. |
-| `amazon_lex.png` | Lex V2 configuration screen showing intents and slots. |
-| `callback_flow.png` | Visual contact flow for handling callback offers. |
-| `cloudwatch1.png` | Sample CloudWatch dashboard with call metrics. |
-| `connect.png` | Entry point to the Connect instance. |
-| `contactsearch.png` | Searching for contacts in the Connect console. |
-| `cw_api.png`, `cw_g.png`, `cw_metric.png` | Additional CloudWatch metric views illustrating API usage and generic metrics. |
-| `cw_metric3.png` | Yet another CloudWatch metric chart for extended performance analysis. |
-| `cw_summary.png` | Consolidated CloudWatch summary chart showing multiple call metrics. |
-| `cw_metric2.png` | Another CloudWatch metric example for deeper analysis. |
-| `iam_lex.png` | IAM policy configuration used to grant Lex permissions. |
-| `iam_lextest.png` | Screenshot of testing IAM permissions for the Lex bot. |
-| `iam_role.png` | The IAM role associated with your Connect instance or Lambda. |
-| `lambda_overview.png` | Overview of the Lambda function details in the AWS console. |
-| `lambda_exe.png` | Lambda execution and configuration settings. |
-| `lex_bot.png` | Summary of the Lex bot definition including intents. |
-| `lex_intent.png` | Detailed configuration of a Lex intent. |
-| `live_call.png` | Example of a live call in progress within Amazon Connect. |
-| `logstream.png`, `logstream1.png` | CloudWatch Log Streams showing real‑time logs for Lambda or Connect. |
-| `metric1.png` | Another CloudWatch metric chart to complement the existing metrics. |
-| `mvp_customerqueue.png` | Diagram or screenshot of the customer queue configuration for the MVP. |
-| `mvp_main_contact_flow.png` | Visual representation of the main contact flow used in this project. |
-| `performance_dashboard.png` | Performance dashboard illustrating key call centre KPIs. |
-| `prod_lex.png` | Production alias configuration for the Lex bot. |
-| `real_time_agent_metrics.png` | Real‑time agent metrics dashboard from Amazon Connect. |
-| `routing_profile.png` | Routing profile settings used to map agents to queues. |
-| `s3_connect.png` | S3 bucket configuration used for storing call recordings or exports. |
-| `s3_connect_recordingbucket.png` | Specific recording bucket configuration for Connect call recordings. |
 
 ## Extending the MVP
 
