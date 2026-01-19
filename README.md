@@ -229,6 +229,14 @@ configuration, and operational behavior of the Amazon Connect contact center.
 | `s3_connect.png` | S3 bucket used for Connect artifacts and recordings. |
 | `s3_connect_recordingbucket.png` | S3 recording bucket configuration for call recordings. |
 
+## Future scope
+
+The current implementation is intentionally minimal.  To extend it:
+
+- Add more intents to the Lex bot for other self‑service scenarios such as “make a payment” or “update address”.
+- Integrate the Lambda handler with external APIs or databases to return live policy or claim information.
+- Use **Amazon Connect Tasks** to follow up with customers asynchronously.
+
 
 🚀 Why This Matters
 
@@ -236,57 +244,5 @@ This project is not a demo flow — it reflects how real insurance contact cente
 
 👤 Author: Manshree Patel
 🎯 Focus: Amazon Connect | AWS | Serverless
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## Extending the MVP
-
-The current implementation is intentionally minimal.  To extend it:
-
-- Add more intents to the Lex bot for other self‑service scenarios such as “make a payment” or “update address”.
-- Integrate the Lambda handler with external APIs or databases to return live policy or claim information.
-- Use **Amazon Connect Tasks** to follow up with customers asynchronously.
-- Build CloudWatch dashboards or alarms to monitor queue length, callback rate and agent availability.
 
 Contributions are welcome!  Feel free to fork the repository and submit pull requests for enhancements.
