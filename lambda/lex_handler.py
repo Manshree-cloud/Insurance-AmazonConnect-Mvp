@@ -5,7 +5,6 @@ This function is invoked by the contact flow via the **InvokeLambdaFunction** bl
 reads an `action` attribute (populated by the Lex bot or contact flow) and returns a
 simple prompt for the caller.
 
-
 """
 
 import json
