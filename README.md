@@ -1,8 +1,9 @@
 # 📞 Insurance Contact Center – Amazon Connect MVP
 
-Production-style **Amazon Connect contact center MVP** built for an insurance use case, demonstrating **end-to-end IVR design, Lex integration, Lambda automation, monitoring, and operational visibility**.
+An Amazon Connect contact center MVP built for an insurance use case.
+This project demonstrates end-to-end IVR design, DTMF and voice routing, Amazon Lex integration, Python (Lambda) business logic, monitoring, and operational visibility.
 
-This project reflects **hands-on experience designing, configuring, and operating Amazon Connect workloads** with a focus on real-world support and production readiness.
+This solution reflects hands-on experience designing, configuring, testing, and operating Amazon Connect workflows, with a focus on real-world contact center behavior rather than demo-only flows.
 
 ---
 🏗 High-Level Call Flow (Logic First)
@@ -23,7 +24,7 @@ Agent Workspace
 Call Recording + Metrics + Logs
 
 
-This flow intentionally supports both keypad users and voice users, which is critical in real insurance contact centers.
+This architecture intentionally supports both keypad-based and voice-based callers, which is critical for insurance contact centers where caller preferences vary.
 
 🧠 Core Amazon Connect Logic (Detailed)
 1️⃣ Entry Point & Logging
@@ -65,8 +66,8 @@ This ensures callers never get stuck.
 Lex is used only where voice adds value (Claims & Policy queries).
 
 Lex V2 bot trained with intents:
-CheckClaimStatus
-PolicyInformation
+- CheckClaimStatus
+- PolicyInformation
 Lex collects intent → passes context to Lambda
 Contact flow evaluates $.Lex.IntentName
 
@@ -176,15 +177,13 @@ Insurance-AmazonConnect-Mvp/
 
 Amazon Connect IVR design
 
-DTMF + Voice hybrid routing
+DTMF + voice hybrid routing
 
 Amazon Lex V2 integration
 
-Python Lambda development
+Python (Lambda) development
 
 CloudWatch monitoring & troubleshooting
-
-Production-style error handling
 
 Contact center operational thinking
 
@@ -229,7 +228,7 @@ configuration, and operational behavior of the Amazon Connect contact center.
 | `s3_connect.png` | S3 bucket used for Connect artifacts and recordings. |
 | `s3_connect_recordingbucket.png` | S3 recording bucket configuration for call recordings. |
 
-## Future scope
+## Future enhancement
 
 The current implementation is intentionally minimal.  To extend it:
 
@@ -237,6 +236,7 @@ The current implementation is intentionally minimal.  To extend it:
 - Integrate the Lambda handler with external APIs or databases to return live policy or claim information.
 - Use **Amazon Connect Tasks** to follow up with customers asynchronously.
 
+### Contributions are welcome!  Feel free to fork the repository and submit pull requests for enhancements.
 
 🚀 Why This Matters
 
@@ -244,5 +244,3 @@ This project is not a demo flow — it reflects how real insurance contact cente
 
 👤 Author: Manshree Patel
 🎯 Focus: Amazon Connect | AWS | Serverless
-
-Contributions are welcome!  Feel free to fork the repository and submit pull requests for enhancements.
