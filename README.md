@@ -29,6 +29,7 @@ Call Recording + Metrics + Logs
 This architecture intentionally supports both keypad-based and voice-based callers, which is critical for insurance contact centers where caller preferences vary.
 
 🧠 Core Amazon Connect Logic (Detailed)
+
 1️⃣ Entry Point & Logging
 
 Call enters Amazon Connect contact flow
@@ -118,6 +119,7 @@ Prevents excessive wait times
 
 
 📊 Monitoring, Logs & Operations (Very Important)
+
 CloudWatch Logs
 
 Contact flow execution logs
