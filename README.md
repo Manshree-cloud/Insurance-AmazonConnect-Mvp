@@ -36,7 +36,7 @@ Call enters Amazon Connect contact flow
 
 Flow logging enabled immediately for traceability
 
-Ensures all execution steps are visible in CloudWatch Logs
+Ensures all execution steps are visible in CloudWatch Logs.
 
 
 2️⃣ Welcome Prompt + Menu Design
